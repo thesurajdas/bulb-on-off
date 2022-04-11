@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb On Off</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="onb.png" type="image/x-icon">
+</head>
+
+<body>
+    <h1>Bulb On/Off</h1>
+    <div>
+        <img id="imgBulb1" src="offb.png" width="25%" height="25%" alt="bulb">
+        <button class="button" onclick="onBulb(1)">Light On</button>
+        <button class="button" onclick="onBulb(0)">Light Off</button>
+        <img id="imgBulb2" src="offb.png" width="25%" height="25%" alt="bulb">
+        <button id="btnID" class="button" onclick="oBulb()">Turn On</button>
+    </div>
+    <script>
+        let onBulb = (e) => {
+            let imgB;
+            if (e == 0) {
+                imgB = "offb.png"
+            } else {
+                imgB = "onb.png"
+            }
+            document.getElementById('imgBulb1').src = imgB;
+        }
+        let oBulb = () => {
+            let image = document.getElementById('imgBulb2');
+            if (image.src.match("onb")) {
+                image.src = "offb.png";
+                document.getElementById("btnID").innerHTML = "Turn On";
+            } else {
+                image.src = "onb.png";
+                document.getElementById("btnID").innerHTML = "Turn Off";
+            }
+        }
+    </script>
+</body>
+
+</html>
